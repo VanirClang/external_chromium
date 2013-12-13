@@ -24,6 +24,10 @@
 // and then remove this.
 #include "base/stringprintf.h"
 
+// When using clang, snprintf is implemented as a define in Bionic,
+// breaking the redefinition below
+#undef snprintf
+
 // Safe standard library wrappers for all platforms.
 
 namespace base {
